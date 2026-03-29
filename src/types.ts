@@ -8,6 +8,8 @@ export interface Move {
   accuracy?: number;
   level?: number; // For level-up moves
   isRelearner?: boolean; // For move relearner
+  tmNumber?: string; // For TM moves
+  hmNumber?: string; // For HM moves
 }
 
 export interface Pokemon {
@@ -20,12 +22,22 @@ export interface Pokemon {
   imageUrl: string;
 }
 
+export interface TrainerPokemon {
+  name: string;
+  level: number;
+  isAce?: boolean;
+  ability: string;
+  heldItem?: string;
+  moves: string[];
+  imageUrl: string;
+}
+
 export interface Trainer {
   id: string;
   name: string;
   specialty: string;
   level: number;
-  pokemon: { name: string; level: number; isAce?: boolean }[];
+  pokemon: TrainerPokemon[];
   imageUrl: string;
   typeIconUrl: string;
 }

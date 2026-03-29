@@ -230,7 +230,7 @@ export const Pokedex = () => {
                     LEVEL UP MOVES
                   </h3>
                   <div className="space-y-2">
-                    {selectedPokemonForMoves.moveset.filter(m => !m.isRelearner).sort((a,b) => (a.level || 0) - (b.level || 0)).map((move, idx) => (
+                    {selectedPokemonForMoves.moveset.filter(m => !m.isRelearner && !m.tmNumber && !m.hmNumber).sort((a,b) => (a.level || 0) - (b.level || 0)).map((move, idx) => (
                       <MoveRow key={idx} move={move} />
                     ))}
                   </div>
@@ -248,6 +248,36 @@ export const Pokedex = () => {
                     ))}
                   </div>
                 </div>
+
+                {/* TM Moves */}
+                {selectedPokemonForMoves.moveset.some(m => m.tmNumber) && (
+                  <div>
+                    <h3 className="font-headline text-lg font-bold text-on-surface mb-4 flex items-center gap-2">
+                      <ChevronRight size={18} className="text-primary-container" />
+                      TM MOVES
+                    </h3>
+                    <div className="space-y-2">
+                      {selectedPokemonForMoves.moveset.filter(m => m.tmNumber).sort((a,b) => (a.tmNumber || '').localeCompare(b.tmNumber || '', undefined, {numeric: true})).map((move, idx) => (
+                        <MoveRow key={idx} move={move} />
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {/* HM Moves */}
+                {selectedPokemonForMoves.moveset.some(m => m.hmNumber) && (
+                  <div>
+                    <h3 className="font-headline text-lg font-bold text-on-surface mb-4 flex items-center gap-2">
+                      <ChevronRight size={18} className="text-primary-container" />
+                      HM MOVES
+                    </h3>
+                    <div className="space-y-2">
+                      {selectedPokemonForMoves.moveset.filter(m => m.hmNumber).sort((a,b) => (a.hmNumber || '').localeCompare(b.hmNumber || '', undefined, {numeric: true})).map((move, idx) => (
+                        <MoveRow key={idx} move={move} />
+                      ))}
+                    </div>
+                  </div>
+                )}
               </div>
             </div>
             
@@ -272,12 +302,19 @@ const MoveRow: React.FC<{ move: Move }> = ({ move }) => {
     }
   };
 
+  const getMoveLabel = () => {
+    if (move.tmNumber) return `TM${move.tmNumber}`;
+    if (move.hmNumber) return `HM${move.hmNumber}`;
+    if (move.isRelearner) return 'RE';
+    return `L.${move.level}`;
+  };
+
   return (
     <div className="flex items-center justify-between p-3 bg-surface-container-low rounded-lg border border-white/5 hover:border-primary-container/30 transition-colors group">
       <div className="flex items-center gap-4">
-        <div className="w-10 text-center">
-          <span className="font-label text-xs font-bold text-primary-container">
-            {move.isRelearner ? 'RE' : `L.${move.level}`}
+        <div className="w-12 text-center">
+          <span className="font-label text-[10px] font-bold text-primary-container">
+            {getMoveLabel()}
           </span>
         </div>
         <div>
