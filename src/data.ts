@@ -556,6 +556,9 @@ export const POKEMON_DATA: Pokemon[] = [
       { name: "LIQUIDATION", type: "WATER", category: "PHYSICAL", power: 85, accuracy: 100, level: 30 },
       { name: "CRUNCH", type: "DARK", category: "PHYSICAL", power: 80, accuracy: 100, level: 1, isRelearner: true },
       { name: "DRAGON DANCE", type: "DRAGON", category: "STATUS", level: 1, isRelearner: true },
+      { name: "SURF", type: "WATER", category: "SPECIAL", power: 90, accuracy: 100, hmNumber: "02" },
+      { name: "WATERFALL", type: "WATER", category: "PHYSICAL", power: 80, accuracy: 100, hmNumber: "04" },
+      { name: "ICE BEAM", type: "ICE", category: "SPECIAL", power: 90, accuracy: 100, tmNumber: "07" },
     ]
   },
   {
@@ -789,6 +792,9 @@ export const POKEMON_DATA: Pokemon[] = [
     moveset: [
       { name: "EXTREMESPEED", type: "NORMAL", category: "PHYSICAL", power: 80, accuracy: 100, level: 1 },
       { name: "FLARE BLITZ", type: "FIRE", category: "PHYSICAL", power: 120, accuracy: 100, level: 1, isRelearner: true },
+      { name: "FLAMETHROWER", type: "FIRE", category: "SPECIAL", power: 90, accuracy: 100, tmNumber: "18" },
+      { name: "FIRE BLAST", type: "FIRE", category: "SPECIAL", power: 110, accuracy: 85, tmNumber: "44" },
+      { name: "SUNNY DAY", type: "FIRE", category: "STATUS", tmNumber: "06" },
     ]
   },
   {
@@ -860,6 +866,9 @@ export const POKEMON_DATA: Pokemon[] = [
     moveset: [
       { name: "PSYCHIC", type: "PSYCHIC", category: "SPECIAL", power: 90, accuracy: 100, level: 1 },
       { name: "DAZZLING GLEAM", type: "FAIRY", category: "SPECIAL", power: 80, accuracy: 100, level: 1, isRelearner: true },
+      { name: "PSYCHIC", type: "PSYCHIC", category: "SPECIAL", power: 90, accuracy: 100, tmNumber: "15" },
+      { name: "CALM MIND", type: "PSYCHIC", category: "STATUS", tmNumber: "27" },
+      { name: "SHADOW BALL", type: "GHOST", category: "SPECIAL", power: 80, accuracy: 100, tmNumber: "40" },
     ]
   },
   {
