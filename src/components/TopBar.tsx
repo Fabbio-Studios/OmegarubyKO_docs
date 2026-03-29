@@ -13,8 +13,11 @@ export const TopBar = () => {
         <NavLink to="/pokedex" className={({ isActive }) => isActive ? 'text-primary-container border-b-2 border-primary-container pb-1' : 'text-on-surface hover:text-primary transition-colors'}>
           Pokedex
         </NavLink>
-        <NavLink to="/trainers" className={({ isActive }) => isActive ? 'text-primary-container border-b-2 border-primary-container pb-1' : 'text-on-surface hover:text-primary transition-colors'}>
-          Trainers
+        <NavLink to="/gym-leaders" className={({ isActive }) => isActive ? 'text-primary-container border-b-2 border-primary-container pb-1' : 'text-on-surface hover:text-primary transition-colors'}>
+          Gym Leaders
+        </NavLink>
+        <NavLink to="/elite-four" className={({ isActive }) => isActive ? 'text-primary-container border-b-2 border-primary-container pb-1' : 'text-on-surface hover:text-primary transition-colors'}>
+          Elite Four
         </NavLink>
         <NavLink to="/encounters" className={({ isActive }) => isActive ? 'text-primary-container border-b-2 border-primary-container pb-1' : 'text-on-surface hover:text-primary transition-colors'}>
           Encounters
@@ -22,14 +25,6 @@ export const TopBar = () => {
       </nav>
 
       <div className="flex items-center gap-4">
-        <div className="relative hidden lg:block">
-          <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant/50" size={16} />
-          <input
-            type="text"
-            placeholder="Search Archive..."
-            className="bg-surface-container-highest border-none rounded-sm px-4 py-2 pl-10 text-sm w-64 focus:ring-1 focus:ring-primary-container text-on-surface placeholder:text-on-surface-variant/50"
-          />
-        </div>
         <button className="text-on-surface hover:bg-surface-container-high/50 transition-all duration-300 p-2 rounded-full">
           <Settings size={20} />
         </button>

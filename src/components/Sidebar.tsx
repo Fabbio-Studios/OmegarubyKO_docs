@@ -6,8 +6,8 @@ export const Sidebar = () => {
   const navItems = [
     { icon: Home, label: 'Home', path: '/' },
     { icon: Database, label: 'National Dex', path: '/pokedex' },
-    { icon: Users, label: 'Gym Leaders', path: '/trainers' },
-    { icon: Shield, label: 'Elite Four', path: '/trainers#elite-four' },
+    { icon: Users, label: 'Gym Leaders', path: '/gym-leaders' },
+    { icon: Shield, label: 'Elite Four', path: '/elite-four' },
     { icon: Sparkles, label: 'Legendaries', path: '/legendaries' },
   ];
 

@@ -4,13 +4,14 @@
  */
 
 import React from 'react';
-import { Routes, Route, useLocation } from 'react-router-dom';
+import { Routes, Route, useLocation, Navigate } from 'react-router-dom';
 import { AnimatePresence } from 'motion/react';
 import { Sidebar } from './components/Sidebar';
 import { TopBar } from './components/TopBar';
 import { Home } from './pages/Home';
 import { Pokedex } from './pages/Pokedex';
 import { Trainers } from './pages/Trainers';
+import { EliteFour } from './pages/EliteFour';
 import { Encounters } from './pages/Encounters';
 
 export default function App() {
@@ -26,7 +27,9 @@ export default function App() {
             <Routes location={location}>
               <Route path="/" element={<Home />} />
               <Route path="/pokedex" element={<Pokedex />} />
-              <Route path="/trainers" element={<Trainers />} />
+              <Route path="/trainers" element={<Navigate replace to="/gym-leaders" />} />
+              <Route path="/gym-leaders" element={<Trainers />} />
+              <Route path="/elite-four" element={<EliteFour />} />
               <Route path="/encounters" element={<Encounters />} />
             </Routes>
           </AnimatePresence>

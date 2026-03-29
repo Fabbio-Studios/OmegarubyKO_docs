@@ -36,6 +36,7 @@ export interface Trainer {
   id: string;
   name: string;
   specialty: string;
+  category?: 'gym' | 'elite' | 'champion';
   level: number;
   pokemon: TrainerPokemon[];
   imageUrl: string;
