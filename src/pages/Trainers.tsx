@@ -102,9 +102,9 @@ export const Trainers = () => {
             </div>
 
             <div className="flex-1 overflow-y-auto p-6 md:p-8">
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
                 {selectedTrainer.pokemon.map((p, idx) => (
-                  <div key={idx} className={`bg-surface-container-lowest p-5 rounded-xl border border-white/5 relative overflow-hidden group ${p.isAce ? 'ring-1 ring-primary-container/30' : ''}`}>
+                  <div key={idx} className={`bg-surface-container-lowest p-4 md:p-5 rounded-xl border border-white/5 relative overflow-hidden group ${p.isAce ? 'ring-1 ring-primary-container/30' : ''}`}>
                     {p.isAce && (
                       <div className="absolute top-0 right-0 bg-primary-container text-on-primary-container text-[8px] font-black px-3 py-1 rounded-bl-lg uppercase tracking-widest z-10">
                         ACE UNIT
@@ -169,7 +169,7 @@ export const Trainers = () => {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-6 h-auto md:h-[600px]">
           <div className="md:col-span-8 bg-surface-container-high rounded-xl overflow-hidden relative group">
             <img
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuApKqSe-R64z0jNW6hgQt5hnOkThBXN_ghLhyaih-u5X4pxgk-EVEAN-106tx9D-BLMeWElbMc3vsg0lx7PBokbvXDChYPAVEbBiEufhuC2kfoVXHZHr9kLPSeuyBYVZddZgaxjC-4U69OEwZn7g22TYVQQmQPEVh9J2KAeM7QAL9h7WMa_PorXNpxKjJa2RuYRfQuNMOF9xrNGxOtbuGBahVbC67HJZCTzrZctYFDZ4STf4rrapSA0S4CkRtDtQ-6oRkYrBKGXNA"
+              src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/376.png"
               alt="Steven Stone"
               className="w-full h-full object-cover scale-105 group-hover:scale-100 transition-transform duration-[2s]"
               referrerPolicy="no-referrer"
@@ -191,12 +191,26 @@ export const Trainers = () => {
                   <span className="font-bold text-on-background">Metagross (Mega)</span>
                   <Star size={14} className="text-primary-container" fill="currentColor" />
                 </li>
-                {['Skarmory', 'Aggron', 'Cradily', 'Armaldo', 'Excadrill'].map((p) => (
-                  <li key={p} className="flex justify-between items-center pb-2 border-b border-white/5">
-                    <span className="font-body text-on-surface-variant">{p}</span>
-                    <span className="text-[10px] font-label opacity-50 uppercase">Tactical</span>
-                  </li>
-                ))}
+                <li className="flex justify-between items-center pb-2 border-b border-white/5">
+                  <span className="font-bold text-on-background">Skarmory</span>
+                  <span className="text-[10px] font-label opacity-50 uppercase">Steel/Flying</span>
+                </li>
+                <li className="flex justify-between items-center pb-2 border-b border-white/5">
+                  <span className="font-bold text-on-background">Aggron (Mega)</span>
+                  <Star size={14} className="text-primary-container" fill="currentColor" />
+                </li>
+                <li className="flex justify-between items-center pb-2 border-b border-white/5">
+                  <span className="font-bold text-on-background">Cradily</span>
+                  <span className="text-[10px] font-label opacity-50 uppercase">Rock/Grass</span>
+                </li>
+                <li className="flex justify-between items-center pb-2 border-b border-white/5">
+                  <span className="font-bold text-on-background">Armaldo</span>
+                  <span className="text-[10px] font-label opacity-50 uppercase">Rock/Bug</span>
+                </li>
+                <li className="flex justify-between items-center pb-2 border-b border-white/5">
+                  <span className="font-bold text-on-background">Excadrill</span>
+                  <span className="text-[10px] font-label opacity-50 uppercase">Ground/Steel</span>
+                </li>
               </ul>
             </div>
             <div className="bg-primary-container p-6 rounded-xl flex flex-col justify-center text-center text-on-primary-container">

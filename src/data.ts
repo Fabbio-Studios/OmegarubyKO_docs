@@ -1170,6 +1170,655 @@ export const TRAINER_DATA: Trainer[] = [
         imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/448.png"
       }
     ]
+  },
+  {
+    id: "03",
+    name: "Wattson",
+    specialty: "ELECTRIC SPECIALIST",
+    level: 36,
+    imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10043.png",
+    typeIconUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/types/generation-viii/adventure-result/electric.png",
+    pokemon: [
+      { 
+        name: "Electrode", 
+        level: 32, 
+        ability: "AFTERMATH", 
+        heldItem: "CHOICE SPECS", 
+        moves: ["THUNDERBOLT", "SWIFT", "SCREECH", "EXPLOSION"],
+        imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/101.png"
+      },
+      { 
+        name: "Magneton", 
+        level: 32, 
+        ability: "MAGNET PULL", 
+        heldItem: "AIR BALLOON", 
+        moves: ["THUNDER WAVE", "TRI ATTACK", "METAL SOUND", "FLASH CANNON"],
+        imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/82.png"
+      },
+      { 
+        name: "Manectric", 
+        level: 33, 
+        ability: "LIGHTNING ROD", 
+        heldItem: "GANLON BERRY", 
+        moves: ["THUNDER FANG", "QUICK ATTACK", "ROAR", "DISCHARGE"],
+        imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/310.png"
+      },
+      { 
+        name: "Electabuzz", 
+        level: 33, 
+        ability: "STATIC", 
+        heldItem: "EXPERT BELT", 
+        moves: ["THUNDER PUNCH", "ICE PUNCH", "LOW KICK", "LIGHT SCREEN"],
+        imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/125.png"
+      },
+      { 
+        name: "Raichu", 
+        level: 34, 
+        ability: "STATIC", 
+        heldItem: "FOCUS SASH", 
+        moves: ["THUNDERBOLT", "FOCUS BLAST", "NASTY PLOT", "SUBSTITUTE"],
+        imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/26.png"
+      },
+      { 
+        name: "Magnezone", 
+        level: 36, 
+        isAce: true,
+        ability: "MAGNET PULL", 
+        heldItem: "CHOICE SCARF", 
+        moves: ["THUNDERBOLT", "FLASH CANNON", "HIDDEN POWER", "EXPLOSION"],
+        imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/462.png"
+      }
+    ]
+  },
+  {
+    id: "04",
+    name: "Flannery",
+    specialty: "FIRE SPECIALIST",
+    level: 44,
+    imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10044.png",
+    typeIconUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/types/generation-viii/adventure-result/fire.png",
+    pokemon: [
+      { 
+        name: "Torkoal", 
+        level: 40, 
+        ability: "WHITE SMOKE", 
+        heldItem: "WHITE HERB", 
+        moves: ["OVERHEAT", "SOLAR BEAM", "EXPLOSION", "WILL-O-WISP"],
+        imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/324.png"
+      },
+      { 
+        name: "Camerupt", 
+        level: 40, 
+        ability: "MAGMA ARMOR", 
+        heldItem: "AIR BALLOON", 
+        moves: ["EARTHQUAKE", "FLAMETHROWER", "ROCK SLIDE", "EXPLOSION"],
+        imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/323.png"
+      },
+      { 
+        name: "Houndoom", 
+        level: 41, 
+        ability: "EARLY BIRD", 
+        heldItem: "GANLON BERRY", 
+        moves: ["FLAMETHROWER", "CRUNCH", "ROAR", "NASTY PLOT"],
+        imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/229.png"
+      },
+      { 
+        name: "Arcanine", 
+        level: 41, 
+        ability: "INTIMIDATE", 
+        heldItem: "CHOICE BAND", 
+        moves: ["FLARE BLITZ", "EXTREME SPEED", "WILD CHARGE", "CLOSE COMBAT"],
+        imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/59.png"
+      },
+      { 
+        name: "Rapidash", 
+        level: 42, 
+        ability: "FLAME BODY", 
+        heldItem: "EXPERT BELT", 
+        moves: ["FLARE BLITZ", "MEGAHORN", "POISON JAB", "WILL-O-WISP"],
+        imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/78.png"
+      },
+      { 
+        name: "Charizard", 
+        level: 44, 
+        isAce: true,
+        ability: "BLAZE", 
+        heldItem: "CHARCOAL", 
+        moves: ["FLARE BLITZ", "DRAGON PULSE", "FOCUS BLAST", "ROOST"],
+        imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/6.png"
+      }
+    ]
+  },
+  {
+    id: "05",
+    name: "Norman",
+    specialty: "NORMAL SPECIALIST",
+    level: 52,
+    imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10045.png",
+    typeIconUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/types/generation-viii/adventure-result/normal.png",
+    pokemon: [
+      { 
+        name: "Slaking", 
+        level: 48, 
+        ability: "TRUANT", 
+        heldItem: "CHOICE BAND", 
+        moves: ["RETURN", "EARTHQUAKE", "SHADOW CLAW", "AERIAL ACE"],
+        imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/289.png"
+      },
+      { 
+        name: "Vigoroth", 
+        level: 48, 
+        ability: "VITAL SPIRIT", 
+        heldItem: "SALAC BERRY", 
+        moves: ["BULK UP", "SLACK OFF", "SHADOW CLAW", "EARTHQUAKE"],
+        imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/288.png"
+      },
+      { 
+        name: "Linoone", 
+        level: 49, 
+        ability: "PICKUP", 
+        heldItem: "SILK SCARF", 
+        moves: ["EXTREME SPEED", "SHADOW CLAW", "SEED BOMB", "BELLY DRUM"],
+        imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/264.png"
+      },
+      { 
+        name: "Zangoose", 
+        level: 49, 
+        ability: "IMMUNITY", 
+        heldItem: "TOXIC ORB", 
+        moves: ["CLOSE COMBAT", "NIGHT SLASH", "X-SCISSOR", "SWORD DANCE"],
+        imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/335.png"
+      },
+      { 
+        name: "Spinda", 
+        level: 50, 
+        ability: "OWN TEMPO", 
+        heldItem: "SITRUS BERRY", 
+        moves: ["RETURN", "HYPNOSIS", "SHADOW BALL", "TRICK ROOM"],
+        imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/327.png"
+      },
+      { 
+        name: "Slaking", 
+        level: 52, 
+        isAce: true,
+        ability: "TRUANT", 
+        heldItem: "LEFTOVERS", 
+        moves: ["GIGA IMPACT", "EARTHQUAKE", "SHADOW CLAW", "SLACK OFF"],
+        imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/289.png"
+      }
+    ]
+  },
+  {
+    id: "06",
+    name: "Winona",
+    specialty: "FLYING SPECIALIST",
+    level: 60,
+    imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10046.png",
+    typeIconUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/types/generation-viii/adventure-result/flying.png",
+    pokemon: [
+      { 
+        name: "Swellow", 
+        level: 56, 
+        ability: "GUTS", 
+        heldItem: "FLYING GEM", 
+        moves: ["BRAVE BIRD", "RETURN", "U-TURN", "QUICK ATTACK"],
+        imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/277.png"
+      },
+      { 
+        name: "Pelipper", 
+        level: 56, 
+        ability: "RAIN DISH", 
+        heldItem: "DAMPROCK", 
+        moves: ["HYDRO PUMP", "HURRICANE", "ICE BEAM", "TAILWIND"],
+        imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/279.png"
+      },
+      { 
+        name: "Skarmory", 
+        level: 57, 
+        ability: "STURDY", 
+        heldItem: "ROCKY HELMET", 
+        moves: ["BRAVE BIRD", "STEEL WING", "ROAR", "SPIKES"],
+        imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/227.png"
+      },
+      { 
+        name: "Altaria", 
+        level: 57, 
+        ability: "NATURAL CURE", 
+        heldItem: "ALTARIANITE", 
+        moves: ["DRAGON PULSE", "FLAMETHROWER", "ICE BEAM", "ROOST"],
+        imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/334.png"
+      },
+      { 
+        name: "Tropius", 
+        level: 58, 
+        ability: "CHLOROPHYLL", 
+        heldItem: "YACHE BERRY", 
+        moves: ["LEAF STORM", "AIR SLASH", "EARTHQUAKE", "SYNTHESIS"],
+        imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/357.png"
+      },
+      { 
+        name: "Salamence", 
+        level: 60, 
+        isAce: true,
+        ability: "INTIMIDATE", 
+        heldItem: "SALAMENCITE", 
+        moves: ["DRAGON CLAW", "FLAMETHROWER", "CRUNCH", "DRAGON DANCE"],
+        imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/373.png"
+      }
+    ]
+  },
+  {
+    id: "07",
+    name: "Tate & Liza",
+    specialty: "PSYCHIC SPECIALIST",
+    level: 68,
+    imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10047.png",
+    typeIconUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/types/generation-viii/adventure-result/psychic.png",
+    pokemon: [
+      { 
+        name: "Xatu", 
+        level: 64, 
+        ability: "SYNCHRONIZE", 
+        heldItem: "TWISTED SPOON", 
+        moves: ["PSYCHIC", "AIR SLASH", "HEAT WAVE", "ROOST"],
+        imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/178.png"
+      },
+      { 
+        name: "Claydol", 
+        level: 64, 
+        ability: "LEVITATE", 
+        heldItem: "LIGHT CLAY", 
+        moves: ["EARTHQUAKE", "PSYCHIC", "LIGHT SCREEN", "REFLECT"],
+        imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/344.png"
+      },
+      { 
+        name: "Lunatone", 
+        level: 65, 
+        ability: "LEVITATE", 
+        heldItem: "CHOICE SPECS", 
+        moves: ["PSYCHIC", "POWER GEM", "HIDDEN POWER", "CALM MIND"],
+        imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/337.png"
+      },
+      { 
+        name: "Solrock", 
+        level: 65, 
+        ability: "LEVITATE", 
+        heldItem: "HEAT ROTOM", 
+        moves: ["PSYCHIC", "FLAMETHROWER", "ROCK SLIDE", "EXPLOSION"],
+        imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/338.png"
+      },
+      { 
+        name: "Gallade", 
+        level: 66, 
+        ability: "STEADFAST", 
+        heldItem: "GALLADITE", 
+        moves: ["PSYCHO CUT", "CLOSE COMBAT", "LEAF BLADE", "SWORD DANCE"],
+        imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/475.png"
+      },
+      { 
+        name: "Slaking", 
+        level: 68, 
+        isAce: true,
+        ability: "TRUANT", 
+        heldItem: "CHOICE BAND", 
+        moves: ["RETURN", "EARTHQUAKE", "SHADOW CLAW", "GIGA IMPACT"],
+        imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/289.png"
+      }
+    ]
+  },
+  {
+    id: "08",
+    name: "Wallace",
+    specialty: "WATER SPECIALIST",
+    level: 76,
+    imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10048.png",
+    typeIconUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/types/generation-viii/adventure-result/water.png",
+    pokemon: [
+      { 
+        name: "Whiscash", 
+        level: 72, 
+        ability: "OBLIVIOUS", 
+        heldItem: "RINDO BERRY", 
+        moves: ["EARTHQUAKE", "WATERFALL", "ICE BEAM", "AMNESIA"],
+        imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/340.png"
+      },
+      { 
+        name: "Tentacruel", 
+        level: 72, 
+        ability: "CLEAR BODY", 
+        heldItem: "BLACK SLUDGE", 
+        moves: ["HYDRO PUMP", "SLUDGE BOMB", "ICE BEAM", "TOXIC SPIKES"],
+        imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/73.png"
+      },
+      { 
+        name: "Ludicolo", 
+        level: 73, 
+        ability: "RAIN DISH", 
+        heldItem: "DAMPROCK", 
+        moves: ["HYDRO PUMP", "GIGA DRAIN", "ICE BEAM", "LEECH SEED"],
+        imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/272.png"
+      },
+      { 
+        name: "Swampert", 
+        level: 73, 
+        ability: "TORRENT", 
+        heldItem: "SWAMPERTITE", 
+        moves: ["WATERFALL", "EARTHQUAKE", "ICE PUNCH", "STEALTH ROCK"],
+        imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/260.png"
+      },
+      { 
+        name: "Gyarados", 
+        level: 74, 
+        ability: "INTIMIDATE", 
+        heldItem: "WACAN BERRY", 
+        moves: ["WATERFALL", "DRAGON DANCE", "EARTHQUAKE", "BOUNCE"],
+        imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/130.png"
+      },
+      { 
+        name: "Milotic", 
+        level: 76, 
+        isAce: true,
+        ability: "MARVEL SCALE", 
+        heldItem: "LEFTOVERS", 
+        moves: ["SCALD", "ICE BEAM", "RECOVER", "TOXIC"],
+        imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/350.png"
+      }
+    ]
+  },
+  {
+    id: "EF1",
+    name: "Sidney",
+    specialty: "DARK SPECIALIST",
+    level: 84,
+    imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10049.png",
+    typeIconUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/types/generation-viii/adventure-result/dark.png",
+    pokemon: [
+      { 
+        name: "Mightyena", 
+        level: 80, 
+        ability: "INTIMIDATE", 
+        heldItem: "CHOICE BAND", 
+        moves: ["CRUNCH", "PLAY ROUGH", "SUCKER PUNCH", "TAUNT"],
+        imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/262.png"
+      },
+      { 
+        name: "Shiftry", 
+        level: 80, 
+        ability: "CHLOROPHYLL", 
+        heldItem: "HEAT ROTOM", 
+        moves: ["LEAF STORM", "DARK PULSE", "EXPLOSION", "SWORDS DANCE"],
+        imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/275.png"
+      },
+      { 
+        name: "Cacturne", 
+        level: 81, 
+        ability: "SAND VEIL", 
+        heldItem: "LIFE ORB", 
+        moves: ["NEEDLE ARM", "DARK PULSE", "FOCUS BLAST", "SANDSTORM"],
+        imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/332.png"
+      },
+      { 
+        name: "Sharpedo", 
+        level: 81, 
+        ability: "SPEED BOOST", 
+        heldItem: "FOCUS SASH", 
+        moves: ["AQUA JET", "CRUNCH", "EARTHQUAKE", "DESTINY BOND"],
+        imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/319.png"
+      },
+      { 
+        name: "Absol", 
+        level: 82, 
+        ability: "PRESSURE", 
+        heldItem: "ABSOLITE", 
+        moves: ["NIGHT SLASH", "PSYCHO CUT", "FIRE BLAST", "CALM MIND"],
+        imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/359.png"
+      },
+      { 
+        name: "Umbreon", 
+        level: 84, 
+        isAce: true,
+        ability: "SYNCHRONIZE", 
+        heldItem: "LEFTOVERS", 
+        moves: ["FOUL PLAY", "TOXIC", "WISH", "PROTECT"],
+        imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/197.png"
+      }
+    ]
+  },
+  {
+    id: "EF2",
+    name: "Phoebe",
+    specialty: "GHOST SPECIALIST",
+    level: 88,
+    imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10050.png",
+    typeIconUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/types/generation-viii/adventure-result/ghost.png",
+    pokemon: [
+      { 
+        name: "Dusclops", 
+        level: 84, 
+        ability: "PRESSURE", 
+        heldItem: "SPELL TAG", 
+        moves: ["SHADOW PUNCH", "EARTHQUAKE", "ICE PUNCH", "WILL-O-WISP"],
+        imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/356.png"
+      },
+      { 
+        name: "Banette", 
+        level: 84, 
+        ability: "INSOMNIA", 
+        heldItem: "BANETTITE", 
+        moves: ["SHADOW CLAW", "THUNDERBOLT", "X-SCISSOR", "WILL-O-WISP"],
+        imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/354.png"
+      },
+      { 
+        name: "Sableye", 
+        level: 85, 
+        ability: "KEEN EYE", 
+        heldItem: "SABLENITE", 
+        moves: ["SHADOW BALL", "POWER GEM", "FOUL PLAY", "RECOVER"],
+        imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/302.png"
+      },
+      { 
+        name: "Drifblim", 
+        level: 85, 
+        ability: "AFTERMATH", 
+        heldItem: "AIR BALLOON", 
+        moves: ["SHADOW BALL", "THUNDERBOLT", "EXPLOSION", "MINIMIZE"],
+        imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/426.png"
+      },
+      { 
+        name: "Froslass", 
+        level: 86, 
+        ability: "SNOW CLOAK", 
+        heldItem: "FOCUS SASH", 
+        moves: ["SHADOW BALL", "ICE BEAM", "THUNDERBOLT", "DESTINY BOND"],
+        imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/478.png"
+      },
+      { 
+        name: "Dusknoir", 
+        level: 88, 
+        isAce: true,
+        ability: "PRESSURE", 
+        heldItem: "LEFTOVERS", 
+        moves: ["SHADOW PUNCH", "EARTHQUAKE", "ICE PUNCH", "PAIN SPLIT"],
+        imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/477.png"
+      }
+    ]
+  },
+  {
+    id: "EF3",
+    name: "Glacia",
+    specialty: "ICE SPECIALIST",
+    level: 92,
+    imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10051.png",
+    typeIconUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/types/generation-viii/adventure-result/ice.png",
+    pokemon: [
+      { 
+        name: "Glalie", 
+        level: 88, 
+        ability: "INNER FOCUS", 
+        heldItem: "GLALITITE", 
+        moves: ["ICE BEAM", "EARTHQUAKE", "CRUNCH", "EXPLOSION"],
+        imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/362.png"
+      },
+      { 
+        name: "Froslass", 
+        level: 88, 
+        ability: "SNOW CLOAK", 
+        heldItem: "CHOICE SCARF", 
+        moves: ["SHADOW BALL", "ICE BEAM", "THUNDERBOLT", "DESTINY BOND"],
+        imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/478.png"
+      },
+      { 
+        name: "Walrein", 
+        level: 89, 
+        ability: "THICK FAT", 
+        heldItem: "LEFTOVERS", 
+        moves: ["ICE BEAM", "SURF", "EARTHQUAKE", "AQUA RING"],
+        imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/365.png"
+      },
+      { 
+        name: "Hail Florges", 
+        level: 89, 
+        ability: "SNOW WARNING", 
+        heldItem: "LEFTOVERS", 
+        moves: ["ICE BEAM", "MOONBLAST", "SYNTHESIS", "TOXIC"],
+        imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/671.png"
+      },
+      { 
+        name: "Lapras", 
+        level: 90, 
+        ability: "WATER ABSORB", 
+        heldItem: "DAMPROCK", 
+        moves: ["ICE BEAM", "THUNDERBOLT", "PSYCHIC", "SING"],
+        imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/131.png"
+      },
+      { 
+        name: "Articuno", 
+        level: 92, 
+        isAce: true,
+        ability: "PRESSURE", 
+        heldItem: "ICIUM Z", 
+        moves: ["BLIZZARD", "HURRICANE", "ANCIENT POWER", "ROOST"],
+        imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/144.png"
+      }
+    ]
+  },
+  {
+    id: "EF4",
+    name: "Drake",
+    specialty: "DRAGON SPECIALIST",
+    level: 96,
+    imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10052.png",
+    typeIconUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/types/generation-viii/adventure-result/dragon.png",
+    pokemon: [
+      { 
+        name: "Shelgon", 
+        level: 92, 
+        ability: "ROCK HEAD", 
+        heldItem: "CHOICE BAND", 
+        moves: ["DRAGON CLAW", "EARTHQUAKE", "CRUNCH", "DRAGON DANCE"],
+        imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/372.png"
+      },
+      { 
+        name: "Altaria", 
+        level: 92, 
+        ability: "NATURAL CURE", 
+        heldItem: "ALTARIANITE", 
+        moves: ["DRAGON PULSE", "FLAMETHROWER", "ICE BEAM", "ROOST"],
+        imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/334.png"
+      },
+      { 
+        name: "Flygon", 
+        level: 93, 
+        ability: "LEVITATE", 
+        heldItem: "CHOICE SCARF", 
+        moves: ["DRAGON CLAW", "EARTHQUAKE", "FIRE BLAST", "BOOMBURST"],
+        imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/330.png"
+      },
+      { 
+        name: "Kingdra", 
+        level: 93, 
+        ability: "SWIFT SWIM", 
+        heldItem: "DAMPROCK", 
+        moves: ["DRAGON PULSE", "HYDRO PUMP", "ICE BEAM", "DRAGON DANCE"],
+        imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/230.png"
+      },
+      { 
+        name: "Salamence", 
+        level: 94, 
+        ability: "INTIMIDATE", 
+        heldItem: "SALAMENCITE", 
+        moves: ["DRAGON CLAW", "FLAMETHROWER", "EARTHQUAKE", "DRAGON DANCE"],
+        imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/373.png"
+      },
+      { 
+        name: "Dragonite", 
+        level: 96, 
+        isAce: true,
+        ability: "INNER FOCUS", 
+        heldItem: "LEFTOVERS", 
+        moves: ["DRAGON RUSH", "EXTREME SPEED", "FIRE PUNCH", "ROOST"],
+        imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/149.png"
+      }
+    ]
+  },
+  {
+    id: "CHAMP",
+    name: "Steven Stone",
+    specialty: "STEEL SPECIALIST",
+    level: 100,
+    imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/376.png",
+    typeIconUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/types/generation-viii/adventure-result/steel.png",
+    pokemon: [
+      { 
+        name: "Metagross", 
+        level: 100, 
+        ability: "CLEAR BODY", 
+        heldItem: "METAGROSSITE", 
+        moves: ["METEOR MASH", "EARTHQUAKE", "ICE PUNCH", "AGILITY"],
+        imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/376.png"
+      },
+      { 
+        name: "Skarmory", 
+        level: 100, 
+        ability: "STURDY", 
+        heldItem: "ROCKY HELMET", 
+        moves: ["BRAVE BIRD", "STEEL WING", "ROAR", "SPIKES"],
+        imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/227.png"
+      },
+      { 
+        name: "Aggron", 
+        level: 100, 
+        ability: "ROCK HEAD", 
+        heldItem: "AGGRONITE", 
+        moves: ["HEAVY SLAM", "EARTHQUAKE", "AQUA TAIL", "STEALTH ROCK"],
+        imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/306.png"
+      },
+      { 
+        name: "Cradily", 
+        level: 100, 
+        ability: "SUCTION CUPS", 
+        heldItem: "LEFTOVERS", 
+        moves: ["STONE EDGE", "GIGA DRAIN", "RECOVER", "TOXIC"],
+        imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/346.png"
+      },
+      { 
+        name: "Armaldo", 
+        level: 100, 
+        ability: "BATTLE ARMOR", 
+        heldItem: "CHOICE BAND", 
+        moves: ["STONE EDGE", "X-SCISSOR", "AQUA TAIL", "SWORDS DANCE"],
+        imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/348.png"
+      },
+      { 
+        name: "Excadrill", 
+        level: 100, 
+        isAce: true,
+        ability: "SAND RUSH", 
+        heldItem: "LIFE ORB", 
+        moves: ["EARTHQUAKE", "RAPID SPIN", "IRON HEAD", "SANDSTORM"],
+        imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/530.png"
+      }
+    ]
   }
 ];
 
