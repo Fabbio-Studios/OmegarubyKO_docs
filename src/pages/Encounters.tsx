@@ -1,10 +1,11 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { Search, Settings, User, Play, Leaf, Info, AlertTriangle } from 'lucide-react';
-import { ROUTE_DATA, TYPE_COLORS } from '../data';
+import { TYPE_COLORS } from '../data';
+import { ROUTE_ENCOUNTERS } from '../pokemonData';
 
 export const Encounters = () => {
-  const activeRoute = ROUTE_DATA[0];
+  const activeRoute = ROUTE_ENCOUNTERS[0];
 
   const getTypeStyles = (type: string) => {
     const upperType = type.toUpperCase();
@@ -26,7 +27,7 @@ export const Encounters = () => {
           <div className="sticky top-28 space-y-4">
             <h3 className="font-label font-bold text-[10px] tracking-[0.2em] uppercase text-primary-container mb-4 px-2">Hoenn Routes</h3>
             <div className="space-y-1">
-              {ROUTE_DATA.map((route) => (
+              {ROUTE_ENCOUNTERS.map((route) => (
                 <div
                   key={route.id}
                   className={`flex items-center gap-4 p-3 rounded-lg group cursor-pointer transition-all ${

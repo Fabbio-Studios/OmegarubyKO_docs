@@ -48,6 +48,7 @@ const MOVE_TYPE_OVERRIDES: Record<string, { type: string; category: MoveCategory
   'TOXIC': { type: 'POISON', category: 'STATUS' },
   'HIDDEN POWER': { type: 'NORMAL', category: 'SPECIAL' },
   'SUNNY DAY': { type: 'FIRE', category: 'STATUS' },
+  'OPEN COMBAT': { type: 'FIGHTING', category: 'PHYSICAL' },
   'PROTECT': { type: 'NORMAL', category: 'STATUS' },
   'FRUSTRATION': { type: 'NORMAL', category: 'PHYSICAL' },
   'DOUBLE TEAM': { type: 'NORMAL', category: 'STATUS' },
@@ -205,3 +206,124 @@ export const POKEMON_DATA: Pokemon[] = Object.values(rawPoks)
     moveset: parseMoveSet(entry),
   }))
   .sort((a, b) => a.id - b.id);
+
+// Extract encounters data from pkmnoro.js
+const rawRoutes = (pkmnoro as any)?.encs ?? {};
+
+type EncounterType = 'grass' | 'water' | 'surf' | 'fish';
+
+interface RawEncounter {
+  s: string; // species
+  mn: number; // min level
+  mx: number; // max level
+}
+
+interface RawRouteData {
+  name: string;
+  [key: string]: any; // grass, water, etc.
+}
+
+export interface ProcessedEncounter {
+  pokemonName: string;
+  method: string;
+  rarity: string;
+  type: string;
+  rarityLabel: string;
+  minLevel: number;
+  maxLevel: number;
+}
+
+export interface ProcessedRoute {
+  id: string;
+  name: string;
+  description: string;
+  levelRange: string;
+  imageUrl: string;
+  encounters: ProcessedEncounter[];
+}
+
+const getEncounterMethod = (encounterType: string): string => {
+  switch (encounterType) {
+    case 'grass': return 'Tall Grass';
+    case 'water': return 'Water';
+    case 'surf': return 'Surfing';
+    case 'fish': return 'Fishing';
+    default: return encounterType;
+  }
+};
+
+const getEncounterRarity = (encounterType: string): { rarity: string; rarityLabel: string } => {
+  // Since the raw data doesn't have rarity info, we'll assign based on encounter type
+  switch (encounterType) {
+    case 'grass': return { rarity: '45%', rarityLabel: 'Common' };
+    case 'water': return { rarity: '30%', rarityLabel: 'Uncommon' };
+    case 'surf': return { rarity: '20%', rarityLabel: 'Rare' };
+    case 'fish': return { rarity: '15%', rarityLabel: 'Very Rare' };
+    default: return { rarity: '30%', rarityLabel: 'Uncommon' };
+  }
+};
+
+const processRouteEncounters = (routeKey: string, routeData: RawRouteData): ProcessedRoute => {
+  const encounters: ProcessedEncounter[] = [];
+
+  // Process different encounter types
+  Object.keys(routeData).forEach(encounterType => {
+    if (encounterType === 'name') return; // Skip the name field
+
+    const encounterData = routeData[encounterType];
+    if (encounterData?.encs) {
+      const method = getEncounterMethod(encounterType);
+      const { rarity, rarityLabel } = getEncounterRarity(encounterType);
+
+      encounterData.encs.forEach((enc: RawEncounter) => {
+        // Find the Pokemon data to get its type
+        const pokemonData = POKEMON_DATA.find(p => p.name.toLowerCase() === enc.s.toLowerCase());
+        const type = pokemonData?.types[0] || 'Normal';
+
+        encounters.push({
+          pokemonName: enc.s,
+          method,
+          rarity,
+          type,
+          rarityLabel,
+          minLevel: enc.mn,
+          maxLevel: enc.mx,
+        });
+      });
+    }
+  });
+
+  // Calculate level range
+  const allLevels = encounters.flatMap(enc => [enc.minLevel, enc.maxLevel]);
+  const minLevel = allLevels.length > 0 ? Math.min(...allLevels) : 1;
+  const maxLevel = allLevels.length > 0 ? Math.max(...allLevels) : 10;
+  const levelRange = `${minLevel}-${maxLevel}`;
+
+  // Generate a description based on the route name
+  const description = routeData.name && routeData.name.includes('Route') ? 'Wild Area' : 'Special Location';
+
+  // Use a placeholder image URL (could be improved with actual route images)
+  const imageUrl = `https://picsum.photos/seed/${routeKey}/800/400`;
+
+  return {
+    id: routeKey.replace('route', ''),
+    name: routeData.name,
+    description,
+    levelRange,
+    imageUrl,
+    encounters,
+  };
+};
+
+export const ROUTE_ENCOUNTERS: ProcessedRoute[] = Object.entries(rawRoutes)
+  .map(([routeKey, routeData]) => processRouteEncounters(routeKey, routeData as RawRouteData))
+  .filter(route => route.encounters.length > 0) // Only include routes with encounters
+  .sort((a, b) => {
+    // Sort by route number if it's a route, otherwise alphabetically
+    const aNum = parseInt(a.id);
+    const bNum = parseInt(b.id);
+    if (!isNaN(aNum) && !isNaN(bNum)) {
+      return aNum - bNum;
+    }
+    return a.name.localeCompare(b.name);
+  });
