@@ -1,8 +1,20 @@
 import React, { useState, useMemo } from 'react';
 import { motion } from 'motion/react';
 import { Search, Filter, SortAsc, Bolt, Lock, X, Sword, Zap, CircleDashed, ChevronRight, Info } from 'lucide-react';
-import { POKEMON_DATA, TYPE_COLORS } from '../data';
+import { TYPE_COLORS } from '../data';
+import { POKEMON_DATA } from '../pokemonData';
 import { Pokemon, Move } from '../types';
+
+const STAT_ORDER = ['hp', 'at', 'df', 'sa', 'sd', 'sp'] as const;
+const STAT_LABELS: Record<typeof STAT_ORDER[number], string> = {
+  hp: 'HP',
+  at: 'ATK',
+  df: 'DEF',
+  sa: 'SpA',
+  sd: 'SpD',
+  sp: 'SPD',
+};
+const BASE_STAT_SCALE = 180;
 
 export const Pokedex = () => {
   const [searchQuery, setSearchQuery] = useState('');
@@ -29,6 +41,13 @@ export const Pokedex = () => {
       return matchesSearch && matchesType && matchesGen;
     });
   }, [searchQuery, selectedTypes, generation]);
+
+  const formatEvolutionMethod = (method: string, param: string | number | null) => {
+    if (method === 'level') return `Lv. ${param}`;
+    if (method === 'trade') return 'Trade';
+    if (method === 'item') return `Item: ${param}`;
+    return method.toUpperCase();
+  };
 
   const toggleType = (type: string) => {
     setSelectedTypes(prev => 
@@ -155,12 +174,52 @@ export const Pokedex = () => {
                   );
                 })}
               </div>
-              <div className="bg-primary-container/10 p-3 rounded-lg border border-primary-container/20 mb-4">
-                <div className="flex items-center gap-2 mb-1">
-                  <Info size={14} className="text-primary-container" />
-                  <span className="font-label text-[10px] font-black text-primary-container uppercase tracking-widest">Ability: {pokemon.ability}</span>
+              <div className="mb-4">
+                <div className="flex items-center justify-between gap-4 mb-3">
+                  <span className="font-label text-[10px] uppercase tracking-[0.25em] text-primary-container">Base Stats</span>
+                  <span className="text-[10px] uppercase tracking-[0.2em] text-on-surface-variant">
+                    BST {STAT_ORDER.reduce((sum, stat) => sum + pokemon.baseStats[stat], 0)}
+                  </span>
                 </div>
-                <p className="text-[11px] text-on-surface-variant font-medium italic leading-tight">{pokemon.abilityDescription}</p>
+                <div className="space-y-2">
+                  {STAT_ORDER.map((stat) => {
+                    const value = pokemon.baseStats[stat];
+                    const width = Math.min((value / BASE_STAT_SCALE) * 100, 100);
+                    return (
+                      <div key={stat} className="flex items-center gap-3 text-[10px] uppercase tracking-[0.2em] text-on-surface-variant">
+                        <span className="w-10 font-bold text-on-surface">{STAT_LABELS[stat]}</span>
+                        <div className="w-full bg-surface-container-highest h-2 rounded-full overflow-hidden">
+                          <div style={{ width: `${width}%` }} className="h-full rounded-full bg-primary-container" />
+                        </div>
+                        <span className="w-10 text-right font-black text-on-surface">{value}</span>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+
+              <div className="bg-surface-container-highest p-3 rounded-xl border border-white/5 mb-4">
+                <div className="flex items-center justify-between gap-4 mb-2">
+                  <span className="font-label text-[10px] uppercase tracking-[0.25em] text-primary-container">Abilities</span>
+                  <span className="text-[12px] font-bold text-on-surface">{pokemon.abilities.join(' / ') || 'Unknown'}</span>
+                </div>
+                <p className="text-[11px] text-on-surface-variant leading-tight">{pokemon.abilityDescription || 'Abilities sourced directly from ROM dataset.'}</p>
+              </div>
+
+              <div className="bg-surface-container-highest p-3 rounded-xl border border-white/5 mb-4">
+                <span className="font-label text-[10px] uppercase tracking-[0.25em] text-primary-container">Evolution</span>
+                {pokemon.evolution.length ? (
+                  <ul className="mt-3 space-y-2 text-[12px] text-on-surface-variant">
+                    {pokemon.evolution.map((evo, idx) => (
+                      <li key={idx} className="flex items-center justify-between gap-2">
+                        <span>{evo.name}</span>
+                        <span className="text-[10px] uppercase tracking-[0.2em] text-on-surface">{formatEvolutionMethod(evo.method, evo.param)}</span>
+                      </li>
+                    ))}
+                  </ul>
+                ) : (
+                  <p className="mt-3 text-[12px] text-on-surface-variant">Final stage or no evolution data available.</p>
+                )}
               </div>
 
               <button 
@@ -223,6 +282,39 @@ export const Pokedex = () => {
 
             <div className="p-6 max-h-[60vh] overflow-y-auto">
               <div className="space-y-8">
+                <div className="grid gap-6 sm:grid-cols-2">
+                  <div className="bg-surface-container-lowest rounded-3xl p-4 border border-white/5">
+                    <h3 className="font-headline text-lg font-bold text-on-surface mb-4">BASE STATS</h3>
+                    <div className="grid grid-cols-3 gap-3">
+                      {Object.entries(selectedPokemonForMoves.baseStats).map(([stat, value]) => (
+                        <div key={stat} className="bg-surface-container-high rounded-2xl p-3 text-center">
+                          <span className="block text-[10px] uppercase tracking-[0.2em] text-on-surface-variant">{stat.toUpperCase()}</span>
+                          <p className="mt-2 font-black text-on-surface text-xl">{value}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                  <div className="bg-surface-container-lowest rounded-3xl p-4 border border-white/5">
+                    <h3 className="font-headline text-lg font-bold text-on-surface mb-4">EVOLUTION DATA</h3>
+                    {selectedPokemonForMoves.evolution.length ? (
+                      <ul className="space-y-3 text-[13px] text-on-surface-variant">
+                        {selectedPokemonForMoves.evolution.map((evo, idx) => (
+                          <li key={idx} className="flex items-center justify-between gap-2">
+                            <span>{evo.name}</span>
+                            <span className="text-[10px] uppercase tracking-[0.2em] text-primary-container">{formatEvolutionMethod(evo.method, evo.param)}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    ) : (
+                      <p className="text-[13px] text-on-surface-variant">Final stage or no evolution method recorded.</p>
+                    )}
+                    <div className="mt-5">
+                      <span className="font-label text-[10px] uppercase tracking-[0.25em] text-primary-container">Abilities</span>
+                      <p className="mt-2 text-sm text-on-surface">{selectedPokemonForMoves.abilities.join(' / ')}</p>
+                    </div>
+                  </div>
+                </div>
+
                 {/* Level Up Moves */}
                 <div>
                   <h3 className="font-headline text-lg font-bold text-on-surface mb-4 flex items-center gap-2">
@@ -304,7 +396,9 @@ const MoveRow: React.FC<{ move: Move }> = ({ move }) => {
 
   const getMoveLabel = () => {
     if (move.tmNumber) return `TM${move.tmNumber}`;
+    if (move.isTM) return 'TM';
     if (move.hmNumber) return `HM${move.hmNumber}`;
+    if (move.isHM) return 'HM';
     if (move.isRelearner) return 'RE';
     return `L.${move.level}`;
   };

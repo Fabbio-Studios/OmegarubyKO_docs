@@ -8,16 +8,33 @@ export interface Move {
   accuracy?: number;
   level?: number; // For level-up moves
   isRelearner?: boolean; // For move relearner
+  isTM?: boolean;
+  isHM?: boolean;
   tmNumber?: string; // For TM moves
   hmNumber?: string; // For HM moves
+}
+
+export interface Evolution {
+  name: string;
+  method: string;
+  param: string | number | null;
 }
 
 export interface Pokemon {
   id: number;
   name: string;
   types: string[];
-  ability: string;
-  abilityDescription: string;
+  abilities: string[];
+  abilityDescription?: string;
+  baseStats: {
+    hp: number;
+    at: number;
+    df: number;
+    sa: number;
+    sd: number;
+    sp: number;
+  };
+  evolution: Evolution[];
   moveset: Move[];
   imageUrl: string;
 }
