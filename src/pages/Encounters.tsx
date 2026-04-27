@@ -1,11 +1,22 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'motion/react';
 import { Search, Settings, User, Play, Leaf, Info, AlertTriangle } from 'lucide-react';
 import { TYPE_COLORS } from '../data';
 import { ROUTE_ENCOUNTERS } from '../pokemonData';
 
 export const Encounters = () => {
-  const activeRoute = ROUTE_ENCOUNTERS[0];
+  const [activeRoute, setActiveRoute] = useState(ROUTE_ENCOUNTERS[0]);
+  const [searchTerm, setSearchTerm] = useState('');
+
+  const filteredRoutes = ROUTE_ENCOUNTERS.filter(route =>
+    route.name.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
+  useEffect(() => {
+    if (!filteredRoutes.find(route => route.id === activeRoute.id)) {
+      setActiveRoute(filteredRoutes[0] || ROUTE_ENCOUNTERS[0]);
+    }
+  }, [searchTerm, filteredRoutes, activeRoute.id]);
 
   const getTypeStyles = (type: string) => {
     const upperType = type.toUpperCase();
@@ -26,10 +37,21 @@ export const Encounters = () => {
         <div className="lg:col-span-4 space-y-6">
           <div className="sticky top-28 space-y-4">
             <h3 className="font-label font-bold text-[10px] tracking-[0.2em] uppercase text-primary-container mb-4 px-2">Hoenn Routes</h3>
+            <div className="relative mb-4">
+              <Search size={16} className="absolute left-3 top-1/2 transform -translate-y-1/2 text-on-surface-variant" />
+              <input
+                type="text"
+                placeholder="Search routes..."
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                className="w-full pl-10 pr-4 py-2 bg-surface-container-low border border-white/10 rounded-lg text-on-surface placeholder-on-surface-variant focus:outline-none focus:border-primary-container"
+              />
+            </div>
             <div className="space-y-1">
-              {ROUTE_ENCOUNTERS.map((route) => (
+              {filteredRoutes.map((route) => (
                 <div
                   key={route.id}
+                  onClick={() => setActiveRoute(route)}
                   className={`flex items-center gap-4 p-3 rounded-lg group cursor-pointer transition-all ${
                     route.id === activeRoute.id ? 'bg-surface-container-high' : 'hover:bg-surface-container-low'
                   }`}
